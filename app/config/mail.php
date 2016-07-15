@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'the.media.box.team@gmail.com', 'name' => 'The MediaBox Team'),
 
 	/*
 	|--------------------------------------------------------------------------
