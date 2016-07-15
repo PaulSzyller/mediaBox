@@ -1,22 +1,22 @@
 # Contribution Guidelines
 
-After the first wave of initial setup steps, please follow those directions when working on the app on your own:
+After the first wave of initial setup steps, please follow those directions when working on the app on your own:  
   
-  -make sure your local repo is on the master branch
-  `$ git checkout master`
+  -make sure your local repo is on the master branch  
+  `$ git checkout master`  
 
-  -create and switch to a new branch with descriptive name
-  `$ git checkout -b myNewFeature`
+  -create and switch to a new branch with descriptive name  
+  `$ git checkout -b myNewFeature`  
 
-  -make all your desired changes
+  -make all your desired changes  
 
-  -add and commit your changes to your branch
-  `$ git add myModifiedFile.php`
-  `$ git commit -m "I modified a file"`
+  -add and commit your changes to your branch  
+  `$ git add myModifiedFile.php`  
+  `$ git commit -m "I modified a file"`  
 
-  -push your branch to the github repo
-  `$ git push origin myNewFeature`
+  -push your branch to the github repo  
+  `$ git push origin myNewFeature`  
 
-  -create a pull request on github
+  -create a pull request on github  
 
-  -either we decide on 1 person that approves every PR or we can review them together, and merge them to the master
+  -either we decide on 1 person that approves every PR or we can review them together, and merge them to the master  
