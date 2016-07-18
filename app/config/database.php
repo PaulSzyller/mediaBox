@@ -54,8 +54,8 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
-			'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
+			'host'      => getenv('DBHOST'),
+			'unix_socket' => getenv('DBSOCK'),
 			'database'  => getenv('DBNAME'),
 			'username'  => getenv('DBUSERNAME'),
 			'password'  => getenv('DBPASS'),
