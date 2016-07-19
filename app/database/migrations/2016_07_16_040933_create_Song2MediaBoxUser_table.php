@@ -12,8 +12,8 @@ class CreateSong2MediaBoxUserTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('Song2MediaBoxUser', function(Blueprint $table) {
-			$table->text('id');
-			$table->text('id');
+			$table->text('uid');
+			$table->text('mid');
 		});
 	}
 
