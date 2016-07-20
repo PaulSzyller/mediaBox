@@ -12,3 +12,5 @@
 */
 
 Route::get('/login', 'AuthenticationController@showLoginView');
+
+Route::get('/movie/{id}', 'BaseController@getMovie');

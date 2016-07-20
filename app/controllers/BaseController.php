@@ -15,4 +15,10 @@ class BaseController extends Controller {
 		}
 	}
 
+    function getMovie($id)
+    {
+        // returns information of a movie
+        return Tmdb::getMoviesApi()->getMovie($id);
+    }
+
 }
