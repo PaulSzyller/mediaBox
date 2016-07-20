@@ -3,17 +3,19 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSong2MediaBoxUserTable extends Migration {
+class CreateMovieTable extends Migration {
 
 	/**
 	 * Run the migrations.
 	 *
 	 * @return void
 	 */
-	public function up() {
-		Schema::create('Song2MediaBoxUser', function(Blueprint $table) {
-			$table->text('uid');
-			$table->text('mid');
+	public function up()
+	{
+		Schema::create('Movie', function(Blueprint $table) {
+			$table->increments('id');
+			$table->text('title');
+			$table->timestamps();
 		});
 	}
 
@@ -24,7 +26,7 @@ class CreateSong2MediaBoxUserTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Song2MediaBoxUser');
+		Schema::drop('Movie');
 	}
 
 }
