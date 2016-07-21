@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -18,10 +19,10 @@
 </head>
 <body>
     <header>
-        @if ( Auth::check() )
-            @include('widgets.navbar_loggedin')
-        @else
+        @if (Auth::check())
             @include('widgets.navbar_loggedout')
+        @else
+            @include('widgets.navbar_loggedin')
         @endif
     </header>
 
@@ -33,9 +34,14 @@
         <!-- Footer goes here -->
     </footer>
 
+    <!-- These files need to stay in this order -->
     {{HTML::script('js/jquery-2.2.3.js')}}
     {{HTML::script('js/tether.js')}}
     {{HTML::script('js/bootstrap.js')}}
     {{HTML::script('js/mdb.js')}}
+    {{HTML::script('js/init.js')}}
+
+    <!-- Custom JavaScript files go here -->
+
 </body>
 </html>

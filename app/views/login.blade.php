@@ -11,58 +11,52 @@
 @section('content')
     <div class="container" id="login-page">
         <div class="col-xs-12 col-md-6">
-            <br><br>
-            <h2 class="text-xs-center">MediaBox</h2>
-            <p class="text-xs-center"><em>a central multimedia storage system</em></p>
+            <h2 class="text-xs-center text-md-left">MediaBox</h2>
+            <p class="text-xs-center text-md-left">A central multimedia storage system</p>
             <hr>
-            <br>
             <p>Welcome to the Media Management System. Our goal is to provide you a central system to store all your favorite media collectables. Whether
                 it's vinyls, movies, video games, or books, we will keep track of your collection!</p>
             <br><br>
             <p>During development, if you are redirect to this page, that view has not been created yet.</p>
         </div>
+
         <div class="col-xs-12 col-md-6">
+            <hr class="hidden-md-up">
             <br>
             <div class="card card-block">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2 class="card-title text-xs-center">Login</h2>
+                        <h2 class="h2-responsive text-xs-center">Login</h2>
                         <hr>
                         <br>
                     </div>
                 </div>
 
-
                 <div class="row">
                     <div class="col-xs-12">
-                        {{ Form::open(['action' => 'AuthenticationController@loginUser', 'method' => 'POST']) }}
-                        <div class="md-form">
-                            <i class="fa fa-user prefix"></i>
-                            <input type="text" id="username" name="username" class="form-control">
-                            <label for="username">Username</label>
-                        </div>
-                        <div class="md-form">
-                            <i class="fa fa-lock prefix"></i>
-                            <input type="password" id="password" name="password" class="form-control">
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="md-form form-group row">
-                            <div class="col-xs-6 text-xs-left">
-                                <p>Don't have an account?<br><a data-toggle="modal"
-                                                                data-target="#modal-register">Sign Up</a></p>
+                        {{ Form::open(array('action' => 'AuthenticationController@loginUser', 'method' => 'POST')) }}
+                            <div class="md-form">
+                                <i class="fa fa-user prefix"></i>
+                                <input type="text" id="username" name="username" class="form-control">
+                                <label for="username">Username</label>
                             </div>
-                            <div class="col-xs-6 text-xs-right">
-                                <a href="" class="btn btn-primary btn-lg text-xs-right">Login</a>
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="password" name="password" class="form-control">
+                                <label for="password">Password</label>
                             </div>
-
-                        </div>
+                            <div class="md-form form-group row">
+                                <div class="col-xs-6 text-xs-left">
+                                    <p>Don't have an account?<br><a data-toggle="modal" data-target="#modal-register">Sign Up</a></p>
+                                </div>
+                                <div class="col-xs-6 text-xs-right">
+                                    <button type="submit" class="btn btn-primary text-xs-right">Login</button>
+                                </div>
+                            </div>
                         {{ Form::close() }}
                     </div>
-                </div>
-
             </div>
         </div>
-
     </div>
 
 

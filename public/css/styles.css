@@ -1,7 +1,37 @@
-body {
-    margin-top: 75px;
+header, main, footer {
+    padding-left: 240px;
 }
 
-#login-page {
-    margin-top: 125px;
+main {
+    margin-top : 110px;
 }
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+.side-nav .logo-wrapper {
+    background: url("http://cdn.pcwallart.com/images/snowy-ski-mountains-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+#dashboard {
+    margin-top: 30px;
+}
+
+#media_chart {
+    margin-top: 15px;
+}
+
+/*
+@media (min-width: 62em) {
+    body {
+        margin-top: 75px;
+    }
+    #login-page {
+        margin-top: 125px;
+    }
+}*/
+
