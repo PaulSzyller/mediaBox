@@ -12,7 +12,7 @@
 
     <div class="row">
         <div class="col-xs-6">
-            <h2>Movies Library</h2>
+            <h2>Vinyl Library</h2>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Filter</button>
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
@@ -27,7 +27,7 @@
         </div>
 
         <div class="col-xs-6 text-xs-right">
-            Add Movie<a class="btn-floating red"><i class="fa fa-plus right"></i></a>
+            Add Vinyl<a class="btn-floating red"><i class="fa fa-plus right"></i></a>
         </div>
         <hr>
     </div>
