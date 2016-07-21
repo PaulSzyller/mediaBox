@@ -10,9 +10,14 @@ class MovieController extends \BaseController {
      *
      * @return ResponseCommand
      */
-    public function showAllMovies()
+    public function showMovieView()
     {
-        //
+        /*if(Auth::check())
+            return View::redirect('dashboard');
+
+        return View::make('login');*/
+
+        return View::make('movies');
     }
 
 
