@@ -16,7 +16,7 @@
                         <div class="card card-block">
                             <h4 class="card-title">Vinyl</h4>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                            <a href="#" class="card-link">View Library</a>
+                            <a href="{{ URL::to('vinyl') }}" class="card-link">View Library</a>
                         </div>
                     </div>
                     <div class="col-xs-12">

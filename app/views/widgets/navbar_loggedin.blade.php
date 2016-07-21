@@ -40,7 +40,7 @@
                     <li><a href="#" class="waves-effect">Books</a></li>
                     <li><a href="{{ URL::to('movie') }}" class="waves-effect">Movies</a></li>
                     <li><a href="#" class="waves-effect">Video Games</a></li>
-                    <li><a href="#" class="waves-effect">Vinyl</a></li>
+                    <li><a href="{{ URL::to('vinyl') }}" class="waves-effect">Vinyl</a></li>
                 </ul>
             </div>
         </li>
