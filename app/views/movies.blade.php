@@ -88,7 +88,7 @@
 @stop
 
 @section('search-section')
-    <h2>Seach</h2>
+    <h2>Search</h2>
     <hr>
     <form class="form-inline">
         <input class="form-control" type="text" placeholder="Search by title">

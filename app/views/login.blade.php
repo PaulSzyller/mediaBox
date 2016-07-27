@@ -59,9 +59,6 @@
         </div>
     </div>
 
-
-
-
     <!-- Modal Register -->
     <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -78,32 +75,90 @@
                 </div>
                 <!--Body-->
                 <div class="modal-body">
-                    <div class="md-form">
-                        <i class="fa fa-envelope prefix"></i>
-                        <input type="text" id="form2" class="form-control">
-                        <label for="form2">Your email</label>
-                    </div>
 
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form3" class="form-control">
-                        <label for="form3">Your password</label>
-                    </div>
+                    {{ Form::open(array('action' => 'RegistrationController@signUp', 'method' => 'POST')) }}
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="username" name="username" class="form-control">
+                                <label for="username">Your username</label>
+                            </div>
 
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form4" class="form-control">
-                        <label for="form4">Repeat password</label>
-                    </div>
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="name" name="name" class="form-control">
+                                <label for="name">Your name</label>
+                            </div>
 
-                    <div class="text-xs-center">
-                        <button class="btn btn-primary btn-lg">Sign up</button>
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="email" name="email" class="form-control">
+                                <label for="email">Your email</label>
+                            </div>
 
-                        <fieldset class="form-group">
-                            <input type="checkbox" id="checkbox1">
-                            <label for="checkbox1">Subscribe me to the newsletter</label>
-                        </fieldset>
-                    </div>
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="password" name="password" class="form-control">
+                                <label for="password">Your password</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="confirm_password" name="confirm_password" class="form-control">
+                                <label for="confirm_password">Repeat password</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="location" name="location" class="form-control">
+                                <label for="location">Your location</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="date" id="dob" name="dob" class="form-control datepicker">
+                                <label for="dob">Date of Birth</label>
+                            </div>
+
+                            <div class="md-form m-b-2 p-b-3">
+                                <h5>Gender:</h5>
+
+                                <fieldset class="form-group">
+                                    <input class="with-gap" name="gender" type="radio" id="male">
+                                    <label for="male">Male</label>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <input class="with-gap" name="gender" type="radio" id="female">
+                                    <label for="female">Female</label>
+                                </fieldset>
+                            </div>
+
+                            <div class="md-form">
+                                <select class="mdb-select" name="question">
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="favorite_food">Favorite Food?</option>
+                                    <option value="favorite_movie">Favorite Movie?</option>
+                                    <option value="birth_city">Birth City?</option>
+                                    <option value="mother_maiden_name">Mother's Maiden Name?</option>
+                                </select>
+                                <label>Verification Question</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="answer" name="answer" class="form-control">
+                                <label for="answer">Verification Answer</label>
+                            </div>
+                            <div class="text-xs-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign up</button>
+
+                                <fieldset class="form-group">
+                                    <input type="checkbox" id="remember_token" name="remember_token" value="yes">
+                                    <label for="remember_token">Remember Me</label>
+                                </fieldset>
+                            </div>
+
+                    {{ Form::close() }}
                 </div>
                 <!--Footer-->
                 <div class="modal-footer">

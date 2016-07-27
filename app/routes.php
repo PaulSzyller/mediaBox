@@ -9,11 +9,12 @@
 // Login/Logout Routes
 Route::get('/login', 'AuthenticationController@showLoginView');
 Route::post('/login', 'AuthenticationController@loginUser');
-Route::post('/logout', 'AuthenticationController@logoutUser');
+Route::get('/logout', 'AuthenticationController@logout');
 
 Route::get('/show', 'AuthenticationController@showUsers');
 
 // Signup Routes
+Route::post('/signup', 'RegistrationController@signUp');
 
 // Dashboard Routes
 Route::get('/dashboard', 'DashboardController@showDashboardView');

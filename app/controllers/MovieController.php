@@ -6,16 +6,14 @@ class MovieController extends \BaseController {
 
 
     /**
-     * Display the full list of movies a user has in their collection.
-     *
-     * @return ResponseCommand
-     */
+ * Display the full list of movies a user has in their collection.
+ *
+ * @return ResponseCommand
+ */
     public function showMovieView()
     {
-        /*if(Auth::check())
+        if(Auth::check())
             return View::redirect('dashboard');
-
-        return View::make('login');*/
 
         return View::make('movies');
     }

@@ -20,9 +20,9 @@
 <body>
     <header>
         @if (Auth::check())
-            @include('widgets.navbar_loggedin')
-        @else
             @include('widgets.navbar_loggedout')
+        @else
+            @include('widgets.navbar_loggedin')
         @endif
     </header>
 
