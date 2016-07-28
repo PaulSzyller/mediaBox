@@ -85,8 +85,14 @@
 
                             <div class="md-form">
                                 <i class="fa fa-user prefix"></i>
-                                <input type="text" id="name" name="name" class="form-control">
-                                <label for="name">Your name</label>
+                                <input type="text" id="fname" name="fname" class="form-control">
+                                <label for="fname">First name</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-user prefix"></i>
+                                <input type="text" id="lname" name="lname" class="form-control">
+                                <label for="lname">Last name</label>
                             </div>
 
                             <div class="md-form">

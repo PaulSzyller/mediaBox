@@ -8,7 +8,8 @@ class RegistrationController extends \BaseController
 
         $validation = Validator::make(Input::all(), [
             'username' => 'required|unique:MediaBoxUser',
-            'name' => 'required',
+            'fname' => 'required',
+            'lname' => 'required',
             'email' => 'required|email|unique:MediaBoxUser',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
@@ -24,7 +25,8 @@ class RegistrationController extends \BaseController
         }
 
         $username = Input::get('username');
-        $name = Input::get('name');
+        $fname = Input::get('fname');
+        $lname = Input::get('lname');
         $email = Input::get('email');
         $password = Input::get('password');
         //$confirm_password = Input::get('confirm_password');
@@ -44,7 +46,8 @@ class RegistrationController extends \BaseController
         try {
             User::create([
                 'username' => $username,
-                'name' => $name,
+                'first_name' => $fname,
+                'last_name' => $lname,
                 'email' => $email,
                 'password' => Hash::make($password),
                 'gender' => $gender,
