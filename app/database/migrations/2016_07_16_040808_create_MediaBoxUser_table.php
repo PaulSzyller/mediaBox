@@ -23,7 +23,7 @@ class CreateMediaBoxUserTable extends Migration {
             $table->date('dob');
             $table->text('question');
             $table->text('answer');
-            $table->enum('gender', ['male', 'female']);
+            $table->enum('gender', ['male', 'female', 'other']);
             $table->rememberToken();
 	        $table->timestamps();
         });
