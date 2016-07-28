@@ -4,41 +4,23 @@ class AuthenticationController extends \BaseController {
 
 	public function showLoginView() {
         if(Auth::check()) {
-            return redirect::to('/dashboard');
+           return Redirect::to('/dashboard');
         }
 
         return View::make('login');
 	}
 
     public function loginUser() {
-/*
-        $username = Input::get('username');
-        $password = Input::get('password');
-
-        $user = User::where('username', '=', $username)->first();
-
-        if($user->password == $password){
-            return Redirect::to('/dashboard');
-        }else{
-            return Redirect::to('/login');
-        }
-*/
-        /*
-         *
-         * Can't get the code below to log me in.
-         *
-        */
-
-       /* $validation = Validator::make(Input::all(),[
+        $validation = Validator::make(Input::all(),[
             'username' =>' required',
             'password' => 'required',
         ]);
 
         if ($validation->fails()) {
             $messages = $validation->messages();
-            //Session::flash('validation_messages', $messages);
+            Session::flash('validation_messages', $messages);
             return Redirect::back()->withInput();
-        }*/
+        }
 
 
 
