@@ -13,8 +13,10 @@ class CreateMovie2MediaBoxUserTable extends Migration {
 	public function up()
 	{
 		Schema::create('Movie2MediaBoxUser', function(Blueprint $table) {
-			$table->text('user_id');
-			$table->text('movie_id');
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('MediaBoxUser');
+			$table->integer('movie_id')->unsigned();
+			$table->foreign('movie_id')->references('id')->on('Movie');
 			$table->timestamps();
 		});
 	}

@@ -14,7 +14,16 @@ class CreateMovieTable extends Migration {
 	{
 		Schema::create('Movie', function(Blueprint $table) {
 			$table->increments('id');
-			$table->text('title');
+			$table->string('genre', 255);
+			$table->string('homepage', 255)->nullable();
+			$table->string('imdb_id', 255);
+			$table->string('title', 255);
+			$table->text('overview')->nullable();
+			$table->integer('user_rating')->unsigned();
+			$table->string('poster_path', 255)->nullable();
+			$table->date('release_date');
+			$table->string('status', 255)->default('unknown');
+			$table->text('tag_line')->nullable();
 			$table->timestamps();
 		});
 	}
