@@ -7,7 +7,7 @@ After the first wave of initial setup steps, please follow those directions when
   -make sure your local repo is on the master branch  
   `$ git checkout master`  
   
-  -make sure master is up to date
+  -make sure master is up to date   
   `$ git pull origin master`
 
   -create and switch to a new branch with descriptive name  
