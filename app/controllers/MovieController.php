@@ -12,8 +12,8 @@ class MovieController extends \BaseController {
  */
     public function showMovieView()
     {
-        if(Auth::check())
-            return View::redirect('dashboard');
+        if(!(Auth::check()))
+            return View::redirect('login');
 
         return View::make('movies');
     }

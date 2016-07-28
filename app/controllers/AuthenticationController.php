@@ -45,7 +45,7 @@ class AuthenticationController extends \BaseController {
         if (Auth::attempt(Input::only('username', 'password'), true)) {
             return Redirect::to('/dashboard');
         } else {
-            //Session::flash('error_message', 'Invalid credentials');
+            Session::flash('error_message', 'Invalid credentials');
             return Redirect::to('/login');
         }
     }
