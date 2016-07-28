@@ -9,9 +9,9 @@ class RegistrationController extends \BaseController
         $validation = Validator::make(Input::all(), [
             'username' => 'required|unique:MediaBoxUser',
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:MediaBoxUser',
             'password' => 'required',
-            'confirm_password' => 'required',
+            'confirm_password' => 'required|same:password',
             'gender' => 'required',
             'question' => 'required',
             'answer' => 'required'
@@ -27,18 +27,19 @@ class RegistrationController extends \BaseController
         $name = Input::get('name');
         $email = Input::get('email');
         $password = Input::get('password');
-        $confirm_password = Input::get('confirm_password');
+        //$confirm_password = Input::get('confirm_password');
         $gender = Input::get('gender');
         $question = Input::get('question');
         $answer = Input::get('answer');
         $profile_pic = Input::get('profile_pic');
         $remember_token = Input::get('remember_token');
 
-        //compare passwords
+        //compare passwords - SHouldn't need this if the validation works
+        /*
         if ($password != $confirm_password) {
             Session::flash('error_message', 'Passwords do not match');
             return Redirect::back()->withInput();
-        }
+        }*/
 
         try {
             User::create([
