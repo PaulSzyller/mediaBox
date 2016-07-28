@@ -78,13 +78,13 @@
 
                     {{ Form::open(array('action' => 'RegistrationController@signUp', 'method' => 'POST')) }}
                             <div class="md-form">
-                                <i class="fa fa-envelope prefix"></i>
+                                <i class="fa fa-user prefix"></i>
                                 <input type="text" id="username" name="username" class="form-control">
                                 <label for="username">Your username</label>
                             </div>
 
                             <div class="md-form">
-                                <i class="fa fa-envelope prefix"></i>
+                                <i class="fa fa-user prefix"></i>
                                 <input type="text" id="name" name="name" class="form-control">
                                 <label for="name">Your name</label>
                             </div>
@@ -108,13 +108,13 @@
                             </div>
 
                             <div class="md-form">
-                                <i class="fa fa-envelope prefix"></i>
+                                <i class="fa fa-globe prefix"></i>
                                 <input type="text" id="location" name="location" class="form-control">
                                 <label for="location">Your location</label>
                             </div>
 
                             <div class="md-form">
-                                <i class="fa fa-envelope prefix"></i>
+                                <i class="fa fa-birthday-cake prefix"></i>
                                 <input type="date" id="dob" name="dob" class="form-control datepicker">
                                 <label for="dob">Date of Birth</label>
                             </div>
@@ -131,6 +131,11 @@
                                     <input class="with-gap" name="gender" type="radio" id="female">
                                     <label for="female">Female</label>
                                 </fieldset>
+
+                                <fieldset class="form-group">
+                                    <input class="with-gap" name="gender" type="radio" id="other" checked="checked">
+                                    <label for="other">Unspecified</label>
+                                </fieldset>
                             </div>
 
                             <div class="md-form">
@@ -145,7 +150,7 @@
                             </div>
 
                             <div class="md-form">
-                                <i class="fa fa-envelope prefix"></i>
+                                <i class="fa fa-check prefix"></i>
                                 <input type="text" id="answer" name="answer" class="form-control">
                                 <label for="answer">Verification Answer</label>
                             </div>
