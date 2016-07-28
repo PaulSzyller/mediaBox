@@ -29,19 +29,12 @@ class RegistrationController extends \BaseController
         $lname = Input::get('lname');
         $email = Input::get('email');
         $password = Input::get('password');
-        //$confirm_password = Input::get('confirm_password');
+        $location = Input::get('location');
+        $dob = Input::get('dob');
         $gender = Input::get('gender');
         $question = Input::get('question');
         $answer = Input::get('answer');
-        $profile_pic = Input::get('profile_pic');
         $remember_token = Input::get('remember_token');
-
-        //compare passwords - SHouldn't need this if the validation works
-        /*
-        if ($password != $confirm_password) {
-            Session::flash('error_message', 'Passwords do not match');
-            return Redirect::back()->withInput();
-        }*/
 
         try {
             User::create([
@@ -50,10 +43,11 @@ class RegistrationController extends \BaseController
                 'last_name' => $lname,
                 'email' => $email,
                 'password' => Hash::make($password),
+                'location' => $location,
+                'dob' => $dob,
                 'gender' => $gender,
                 'question' => $question,
                 'answer' => $answer,
-                'profile_pic' => $profile_pic,
                 'remember_token' => $remember_token
             ]);
 
