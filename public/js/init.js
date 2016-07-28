@@ -3,7 +3,10 @@ $( document ).ready(function() {
     // Initialize sidenav button
     $(".button-collapse").sideNav();
 
+    // Date Picker for Registration
+    $('.datepicker').pickadate();
 
+    $('.mdb-select').material_select();
 
 });
 

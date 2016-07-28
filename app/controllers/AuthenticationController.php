@@ -3,29 +3,15 @@
 class AuthenticationController extends \BaseController {
 
 	public function showLoginView() {
-		return View::make('login');
+        if(Auth::check()) {
+           return Redirect::to('/dashboard');
+        }
+
+        return View::make('login');
 	}
 
     public function loginUser() {
-
-        $username = Input::get('username');
-        $password = Input::get('password');
-
-        $user = User::where('username', '=', $username)->first();
-
-        if($user->password == $password){
-            return Redirect::to('/dashboard');
-        }else{
-            return Redirect::to('/login');
-        }
-
-        /*
-         *
-         * Can't get the code below to log me in.
-         *
-        */
-
-        /*$validation = Validator::make(Input::all(),[
+        $validation = Validator::make(Input::all(),[
             'username' =>' required',
             'password' => 'required',
         ]);
@@ -36,12 +22,14 @@ class AuthenticationController extends \BaseController {
             return Redirect::back()->withInput();
         }
 
+
+
         if (Auth::attempt(Input::only('username', 'password'), true)) {
             return Redirect::to('/dashboard');
         } else {
             Session::flash('error_message', 'Invalid credentials');
             return Redirect::to('/login');
-        }*/
+        }
     }
 
     public function logout() {
