@@ -15,7 +15,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'MediaBoxUser';
-    protected $fillable = ['username', 'password', 'email', 'name', 'profile_pic', 'location', 'gender'
+    protected $fillable = ['username', 'password', 'email', 'first_name', 'last_name', 'profile_pic', 'location', 'gender'
                                      , 'dob', 'question', 'answer'];
 
 	/**
