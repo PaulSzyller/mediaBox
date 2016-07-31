@@ -5,7 +5,6 @@ class RegistrationController extends \BaseController
 
     public function signUp()
     {
-
         $validation = Validator::make(Input::all(), [
             'username' => 'required|unique:MediaBoxUser',
             'fname' => 'required',
@@ -58,9 +57,14 @@ class RegistrationController extends \BaseController
             return $e;
             return Redirect::back()->withInput();
         }
-
-        Session::flash('success_message', 'Success! Welcome to MediaBox');
-        return Redirect::to('/dashboard');
+        
+        //if signup successful, attempt to login user
+        if (Auth::attempt(Input::only('username', 'password'), true)) {
+            return Redirect::to('/dashboard');
+        } else {
+            Session::flash('error_message', 'Invalid credentials');
+            return Redirect::to('/login');
+        }
     }
 
 }
