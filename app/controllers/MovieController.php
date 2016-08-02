@@ -13,7 +13,7 @@ class MovieController extends \BaseController {
     public function showMovieView()
     {
         if(!(Auth::check()))
-            return View::redirect('login');
+            return Redirect::to('/login');
 
         return View::make('movies');
     }

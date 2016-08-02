@@ -3,9 +3,8 @@
 class AuthenticationController extends \BaseController {
 
 	public function showLoginView() {
-        if(Auth::check()) {
-           return Redirect::to('/dashboard');
-        }
+        if((Auth::check()))
+            return Redirect::to('/dashboard');
 
         return View::make('login');
 	}
@@ -22,13 +21,11 @@ class AuthenticationController extends \BaseController {
             return Redirect::back()->withInput();
         }
 
-
-
         if (Auth::attempt(Input::only('username', 'password'), true)) {
             return Redirect::to('/dashboard');
         } else {
             Session::flash('error_message', 'Invalid credentials');
-            return Redirect::to('/login');
+            return Redirect::back()->withInput();
         }
     }
 
