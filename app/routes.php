@@ -6,6 +6,10 @@
 |--------------------------------------------------------------------------
 */
 
+Route::get("/", function(){
+    return Redirect::to('/login');
+});
+
 // Login/Logout Routes
 Route::get('/login', 'AuthenticationController@showLoginView');
 Route::post('/login', 'AuthenticationController@loginUser');
