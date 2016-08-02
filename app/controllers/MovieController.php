@@ -100,4 +100,24 @@ class MovieController extends \BaseController {
 	}
 
 
+	/**
+	 * When search gets hit, call this function to get 
+	 * data from api
+	 * 
+	 */
+
+	public function search($name){
+
+		//call to database with the name
+
+
+		//get JSON results
+
+		//go through results and display them (or return as array)
+
+		
+
+	}
+
+
 }
