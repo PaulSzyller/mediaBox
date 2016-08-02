@@ -129,17 +129,17 @@
                                 <h5>Gender:</h5>
 
                                 <fieldset class="form-group">
-                                    <input class="with-gap" name="gender" type="radio" id="male">
+                                    <input class="with-gap" name="gender" type="radio" id="male" value="male">
                                     <label for="male">Male</label>
                                 </fieldset>
 
                                 <fieldset class="form-group">
-                                    <input class="with-gap" name="gender" type="radio" id="female">
+                                    <input class="with-gap" name="gender" type="radio" id="female" value="male">
                                     <label for="female">Female</label>
                                 </fieldset>
 
                                 <fieldset class="form-group">
-                                    <input class="with-gap" name="gender" type="radio" id="other" checked="checked">
+                                    <input class="with-gap" name="gender" type="radio" id="other" value="other" checked="checked">
                                     <label for="other">Unspecified</label>
                                 </fieldset>
                             </div>

@@ -20,10 +20,10 @@ class CreateMediaBoxUserTable extends Migration {
 			$table->string('last_name', 255);
             $table->string('profile_pic',255)->nullable();
             $table->string('location', 255)->nullable();
-            $table->date('dob');
+            $table->string('dob');
             $table->text('question');
             $table->text('answer');
-            $table->enum('gender', ['male', 'female', 'other']);
+            $table->string('gender');
             $table->rememberToken();
 	        $table->timestamps();
         });
