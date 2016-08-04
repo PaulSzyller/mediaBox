@@ -1,5 +1,11 @@
 <?php
 
+
+/**
+* Make a validation object using the user input
+* Require all fields except birthday field.
+*/
+
 class RegistrationController extends \BaseController
 {
 
@@ -17,6 +23,9 @@ class RegistrationController extends \BaseController
             'answer' => 'required'
         ]);
 
+
+        //if failed -> pass user info of the error
+        //show the user the register modal with input filled in
         if ($validation->fails()) {
             $messages = $validation->messages();
             Session::flash('validation_messages', $messages);
@@ -35,6 +44,9 @@ class RegistrationController extends \BaseController
         $answer = Input::get('answer');
         $remember_token = Input::get('remember_token');
 
+
+        // try to create the user, if exception thrown -> show user 
+        // register view with error message and datat filled out
         try {
             User::create([
                 'username' => $username,

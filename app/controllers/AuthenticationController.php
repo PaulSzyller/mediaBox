@@ -1,7 +1,19 @@
 <?php
 
+
+/**
+* AuthenticationController used to allow user to login/ loginout/ segue to register modal
+*
+* If user is validated, allow user to view their profile next
+*/
+
 class AuthenticationController extends \BaseController {
 
+
+    /**
+    * if authenticted allow user to see their dashboard
+    * else show login
+    */
 	public function showLoginView() {
         if((Auth::check()))
             return Redirect::to('/dashboard');
@@ -9,6 +21,11 @@ class AuthenticationController extends \BaseController {
         return View::make('login');
 	}
 
+
+    /**
+    * attempt to login user
+    * @return success -> dashboard; fails -> back to login view with data
+    */
     public function loginUser() {
         $validation = Validator::make(Input::all(),[
             'username' =>' required',
@@ -21,6 +38,8 @@ class AuthenticationController extends \BaseController {
             return Redirect::back()->withInput();
         }
 
+
+        //get username and password, if validated redirect to dashboard
         if (Auth::attempt(Input::only('username', 'password'), true)) {
             return Redirect::to('/dashboard');
         } else {
@@ -29,6 +48,9 @@ class AuthenticationController extends \BaseController {
         }
     }
 
+
+    // logout -> delete user session and logout the user. 
+    // redirect user to login view
     public function logout() {
         Session::flush();
         Auth::logout();
