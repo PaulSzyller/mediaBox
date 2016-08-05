@@ -5,7 +5,8 @@
 | Application Routes
 |--------------------------------------------------------------------------
 */
-
+//Justin was here
+//so was mostafa
 Route::get("/", function(){
     return Redirect::to('/login');
 });
