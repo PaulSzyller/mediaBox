@@ -37,7 +37,7 @@
                     <p>{{$user->dob}}</p>
                     <hr>
                     <h5 class="card-title">Security Question</h5>
-                    <p>*****</p>
+                    <p>{{$user->question}}</p>
                     <hr>
                     <h5 class="card-title">Gender</h5>
                     <p>{{$user->gender}}</p>
