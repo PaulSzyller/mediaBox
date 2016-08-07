@@ -3,8 +3,12 @@
 class ProfileController extends \BaseController {
 
     public function showProfileView() {
-        if((Auth::check()))
-            return View::make('profile');
+        if((Auth::check())) {
+            $user = Auth::user();
+            return View::make('profile', [
+                'user' => $user
+            ]);
+        }
 
         return Redirect::to('/login');
     }
