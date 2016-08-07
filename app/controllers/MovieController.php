@@ -63,6 +63,30 @@ class MovieController extends \BaseController {
 		// returns information of a movie
         return Tmdb::getMoviesApi()->getMovie($id);
 	}
+    
+    public function searchMovies() {
+        $query = Input::get('title');
+        $results = [];
+        $response = Tmdb::getSearchApi()->searchMovies($query);
+        $num_of_pages = $response['total_pages'];
+
+        if ($num_of_pages > 1) {
+            for($i = 1; $i <= $num_of_pages; $i++){
+                $response = Tmdb::getSearchApi()->searchMovies('batman', array('page' => $i));
+                $movies = $response['results'];
+                foreach($movies as $movie){
+                    array_push($results, $movie);
+                }
+            }
+        }
+        else {
+            $movies = $response['results'];
+            foreach($movies as $movie){
+                array_push($results, $movie);
+            }
+        }
+        return Redirect::back()->with('search_result', $results);
+    }
 
 	/**
 	 * Show the form for editing the specified resource.

@@ -90,8 +90,19 @@
 @section('search-section')
     <h2>Search</h2>
     <hr>
-    <form class="form-inline">
-        <input class="form-control" type="text" placeholder="Search by title">
-        <button class="btn btn-primary">Search</button>
+    <form class="form-inline" method="POST" action="/searchMovies">
+        <input class="form-control" type="text" placeholder="Search by title" name="title">
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
+
+@stop
+
+@section('search-result')
+    @if (Session::get('search_result'))
+        <ul class="list-group">
+            @foreach(Session::get('search_result') as $result)
+                <li class="list-group-item">{{$result['title']}}, {{explode('-', $result['release_date'])[0]}}</li>
+            @endforeach
+        </ul>
+    @endif
 @stop
