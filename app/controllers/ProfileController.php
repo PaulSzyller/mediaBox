@@ -6,7 +6,7 @@ class ProfileController extends \BaseController {
         if((Auth::check()))
             return View::make('profile');
 
-        return View::make('login');
+        return Redirect::to('/login');
     }
 
     public function updateProfile() {
