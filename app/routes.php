@@ -24,6 +24,10 @@ Route::post('/signup', 'RegistrationController@signUp');
 // Dashboard Routes
 Route::get('/dashboard', 'DashboardController@showDashboardView');
 
+// Profile Routes
+Route::get('/profile', 'ProfileController@showProfileView');
+Route::post('/profile', 'ProfileController@updateProfile');
+
 // Movie Routes
 Route::get('/movie', 'MovieController@showMovieView');
 Route::get('/movie/{id}', 'MovieController@show');
