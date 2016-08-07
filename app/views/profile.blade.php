@@ -11,40 +11,66 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <div class="card card-block">
-                    <h5 class="card-title">Username</h5>
-                    <p>{{$user->username}}</p>
-                    <hr>
-                    <h5 class="card-title">Email</h5>
-                    <p>{{$user->email}}</p>
-                    <hr>
-                    <h5 class="card-title">First Name</h5>
-                    <p>{{$user->first_name}}</p>
-                    <hr>
-                    <h5 class="card-title">Last Name</h5>
-                    <p>{{$user->last_name}}</p>
-                    <hr>
-                    <h5 class="card-title">Profile Picture</h5>
-                    <p>not implemented</p>
-                </div>
+                <h5 class="card-title">Username</h5>
+                <p>{{$user->username}}</p>
+                <hr>
             </div>
             <div class="col-xs-12 col-md-6">
-                <div class="card card-block">
-                    <h5 class="card-title">Location</h5>
+                <h5 class="card-title">Email</h5>
+                <p>{{$user->email}}</p>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">First Name</h5>
+                <p>{{$user->first_name}}</p>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">Last Name</h5>
+                <p>{{$user->last_name}}</p>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">Profile Picture</h5>
+                @if ($user->profile_pic)
+                    <p>{{$user->profile_pic}}</p>
+                @else
+                    <p>None</p>
+                @endif
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">Location</h5>
+                @if ($user->location)
                     <p>{{$user->location}}</p>
-                    <hr>
-                    <h5 class="card-title">Date of Birth</h5>
-                    <p>{{$user->dob}}</p>
-                    <hr>
-                    <h5 class="card-title">Security Question</h5>
-                    <p>{{$user->question}}</p>
-                    <hr>
-                    <h5 class="card-title">Gender</h5>
-                    <p>{{$user->gender}}</p>
-                    <hr>
-                    <h5 class="card-title">Layout</h5>
-                    <p>default</p>
-                </div>
+                @else
+                    <p>Not Set</p>
+                @endif
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">Date of Birth</h5>
+                <p>{{$user->dob}}</p>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">Security Question</h5>
+                <p>{{$user->question}}</p>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">Gender</h5>
+                <p>{{$user->gender}}</p>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h5 class="card-title">Layout</h5>
+                @if ($user->layout)
+                    <p>{{$user->layout}}</p>
+                @else
+                    <p>Default</p>
+                @endif
+                <hr>
             </div>
         </div>
     </div>
