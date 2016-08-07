@@ -10,40 +10,40 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 col-md-6">
                 <div class="card card-block">
-                    <h4 class="card-title">Username</h4>
+                    <h5 class="card-title">Username</h5>
                     <p>{{$user->username}}</p>
                     <hr>
-                    <h4 class="card-title">Email</h4>
+                    <h5 class="card-title">Email</h5>
                     <p>{{$user->email}}</p>
                     <hr>
-                    <h4 class="card-title">Password</h4>
-                    <p>*****</p>
-                    <hr>
-                    <h4 class="card-title">First Name</h4>
+                    <h5 class="card-title">First Name</h5>
                     <p>{{$user->first_name}}</p>
                     <hr>
-                    <h4 class="card-title">Last Name</h4>
+                    <h5 class="card-title">Last Name</h5>
                     <p>{{$user->last_name}}</p>
                     <hr>
-                    <h4 class="card-title">Profile Picture</h4>
-                    <p>{{$user->profile_pic}}</p>
-                    <hr>
-                    <h4 class="card-title">Location</h4>
+                    <h5 class="card-title">Profile Picture</h5>
+                    <p>not implemented</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="card card-block">
+                    <h5 class="card-title">Location</h5>
                     <p>{{$user->location}}</p>
                     <hr>
-                    <h4 class="card-title">Date of Birth</h4>
+                    <h5 class="card-title">Date of Birth</h5>
                     <p>{{$user->dob}}</p>
                     <hr>
-                    <h4 class="card-title">Security Question</h4>
+                    <h5 class="card-title">Security Question</h5>
                     <p>*****</p>
                     <hr>
-                    <h4 class="card-title">Security Answer</h4>
-                    <p>*****</p>
-                    <hr>
-                    <h4 class="card-title">Gender</h4>
+                    <h5 class="card-title">Gender</h5>
                     <p>{{$user->gender}}</p>
+                    <hr>
+                    <h5 class="card-title">Layout</h5>
+                    <p>default</p>
                 </div>
             </div>
         </div>
