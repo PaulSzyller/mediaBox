@@ -65,7 +65,7 @@
     <!--Navigation icons-->
     <ul class="nav-icons">
         <li><a href="#" class=""><i class="fa fa-comments-o"></i><br><span>Support</span></a></li>
-        <li><a href="#" class=""><i class="fa fa-user"></i><br><span>Account</span></a></li>
+        <li><a href="/profile" class=""><i class="fa fa-user"></i><br><span>Profile</span></a></li>
         <li><a href="#" class="" data-toggle="modal" data-target="#contactForm"><i class="fa fa-envelope-o"></i><br><span>Contact</span></a></li>
         <li><a href="/logout" class=""><i class="fa fa-sign-out"></i><br><span>LogOut</span></a></li>
     </ul>
