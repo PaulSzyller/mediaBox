@@ -103,7 +103,6 @@
 
                     <div class="row">
                         <div class="col-xs-4">
-                            <h5>Poster</h5>
                             <p id="modal-movie-poster-path">PosterPath</p>
                         </div>
 
@@ -112,7 +111,7 @@
                             <p id="modal-movie-overview">Overview</p>
 
                             <h5>Release Date</h5>
-                            <p id="modal-movie-poster-path">PosterPath</p>
+                            <p id="modal-movie-poster-path">ReleaseDate</p>
                         </div>
                     </div>
 
