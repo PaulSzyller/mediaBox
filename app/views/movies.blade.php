@@ -119,8 +119,8 @@
 
                     {{ Form::open(array('action' => 'MovieController@addMovie', 'method' => 'POST')) }}
                     <div class="text-xs-center">
-                        <input type="hidden" name="id" value="id">
-                        <button id="add-movie-button" type="submit" class="btn btn-primary btn-lg">Add movie</button>
+                        <input id="add-movie-button" type="hidden" name="id" value="id">
+                        <button type="submit" class="btn btn-primary btn-lg">Add movie</button>
                     </div>
                     {{ Form::close() }}
                 </div>
