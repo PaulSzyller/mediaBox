@@ -4,6 +4,6 @@ $( document ).ready(function() {
 
 $("#modal-addmovie").on("show.bs.modal", function(e) {
     var link = $(e.relatedTarget);
-    $(this).find(".modal-body").load(link.attr("data-movie"));
+    $(this).find(".modal-body").text(link.attr("data-movie"));
 });
 

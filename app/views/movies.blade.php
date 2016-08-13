@@ -132,7 +132,6 @@
                 <a data-remote="false" data-toggle="modal" data-target="#modal-addmovie" data-movie="{{$result['id']}}">
                     <h4 class="list-group-item-heading">{{$result['title']}}</h4>
                     <p class="list-group-item-text">{{explode('-', $result['release_date'])[0]}}
-                    <br> <img src="{{$result['poster_path']}}" />
                     <br> {{ $result['id'] }}
                     </p>
                 </a>
