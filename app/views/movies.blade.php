@@ -133,7 +133,10 @@
 
                 <!--<form method="POST" action="/addMovie">
                     <button type="submit" class="list-group-item"> -->
-                <a data-remote="false" data-toggle="modal" data-target="#modal-addmovie" data-movie="{{$result}}">
+                <a data-remote="false" data-toggle="modal" data-target="#modal-addmovie"
+                   data-movie-title="{{$result['title']}}" data-movie-overview="{{$result['overview']}}"
+                   data-movie-release-date="{{$result['release_date']}}" data-movie-poster-path="{{$result['poster_path']}}"
+                   data-movie-id="{{$result['id']}}">
                     <h4 class="list-group-item-heading">{{$result['title']}}</h4>
                     <p class="list-group-item-text">{{explode('-', $result['release_date'])[0]}}
                     <br> {{ $result['id'] }}
