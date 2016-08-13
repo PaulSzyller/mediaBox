@@ -28,6 +28,7 @@ Route::get('/dashboard', 'DashboardController@showDashboardView');
 Route::get('/movie', 'MovieController@showMovieView');
 Route::get('/movie/{id}', 'MovieController@show');
 Route::post('/searchMovies', 'MovieController@searchMovies');
+Route::post('/addMovie', 'MovieController@addMovie');
 
 // Vinyl Routes
 Route::get('/vinyl', 'VinylController@showVinylView');
