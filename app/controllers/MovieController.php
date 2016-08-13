@@ -72,6 +72,11 @@ class MovieController extends \BaseController {
      */
     public function searchMovies() {
         $query = Input::get('title');
+
+        if (!$query) {
+            return Redirect::back();
+        }
+
         $results = [];
         $response = Tmdb::getSearchApi()->searchMovies($query);
         $num_of_pages = $response['total_pages'];
@@ -97,49 +102,23 @@ class MovieController extends \BaseController {
     public function addMovie() {
 
         $user = Auth::user();
+        $id = Input::get('id');
 
-        /*
-        $validation = Validator::make(Input::all(), [
-            'username' => 'required|unique:MediaBoxUser',
-            'fname' => 'required',
-            'lname' => 'required',
-            'email' => 'required|email|unique:MediaBoxUser',
-            'password' => 'required',
-            'confirm_password' => 'required|same:password',
-            'gender' => 'required',
-            'question' => 'required',
-            'answer' => 'required'
-        ]);
+        if (!($movie = Movie::where('tmdb_id', '=', $id)->exists())) {
 
-        if ($validation->fails()) {
-            $messages = $validation->messages();
-            Session::flash('validation_messages', $messages);
-            return Redirect::back()->withInput();
-        }*/
-
-        $imdb_id = Input::get('imdb_id');
-        if (!($movie = Movie::where('imdb_id', '=', $imdb_id)->exists())) {
-            $title = Input::get('title');
-            $genre = Input::get('genre');
-            $homepage = Input::get('homepage');
-            $overview = Input::get('overview');
-            $user_rating = Input::get('user_rating');
-            $poster_path = Input::get('poster_path');
-            $release_date = Input::get('release_date');
-            $status = Input::get('status');
-            $tag_line = Input::get('tag_line');
+            $tmdb = Tmdb::getMoviesApi()->getMovie($id);
 
             try {
                 $movie = Movie::create([
-                    'title' => $title,
-                    'genre' => $genre,
-                    'homepage' => $homepage,
-                    'overview' => $overview,
-                    'user_rating' => $user_rating,
-                    'poster_path' => $poster_path,
-                    'release_date' => $release_date,
-                    'status' => $status,
-                    'tag_line' => $tag_line
+                    'title' => $tmdb['title'],
+                    'genre' => $tmdb['genres'][0]['name'],
+                    'homepage' => $tmdb['homepage'],
+                    'overview' => $tmdb['overview'],
+                    'user_rating' => 0,
+                    'poster_path' => $tmdb['poster_path'],
+                    'release_date' => $tmdb['release_date'],
+                    'status' => $tmdb['status'],
+                    'tag_line' => $tmdb['tagline']
                 ]);
             } catch (Exception $e) {
                 //Errors Log
