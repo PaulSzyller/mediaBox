@@ -53,6 +53,11 @@
                                     <button type="submit" class="btn btn-primary text-xs-right">Login</button>
                                 </div>
                             </div>
+<!--
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="remember_token" name="remember_token" value="yes">
+                                <label for="remember_token">Remember Me</label>
+                            </fieldset> -->
                         {{ Form::close() }}
                     </div>
             </div>
@@ -162,20 +167,12 @@
                             </div>
                             <div class="text-xs-center">
                                 <button type="submit" class="btn btn-primary btn-lg">Sign up</button>
-
-                                <fieldset class="form-group">
-                                    <input type="checkbox" id="remember_token" name="remember_token" value="yes">
-                                    <label for="remember_token">Remember Me</label>
-                                </fieldset>
                             </div>
 
                     {{ Form::close() }}
                 </div>
                 <!--Footer-->
                 <div class="modal-footer">
-                    <div class="options">
-                        <p>Already have an account? <a data-dismiss="modal">Log in</a></p>
-                    </div>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>

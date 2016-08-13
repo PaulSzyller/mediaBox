@@ -85,13 +85,84 @@
             </nav>
         </div>
     </div>
+
+    <!-- Modal Register -->
+    <div class="modal fade modal-ext" id="modal-addmovie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3 id="modal-movie-title"><i class="fa fa-user"></i>MovieTitle</h3>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <p id="modal-movie-poster-path">PosterPath</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-8">
+                            <h5>Overview</h5>
+                            <p id="modal-movie-overview">Overview</p>
+
+                            <h5>Release Date</h5>
+                            <p id="modal-movie-release-date">ReleaseDate</p>
+                        </div>
+                    </div>
+
+                    {{ Form::open(array('action' => 'MovieController@addMovie', 'method' => 'POST')) }}
+                    <div class="text-xs-center">
+                        <input id="add-movie-button" type="hidden" name="id" value="id">
+                        <button type="submit" class="btn btn-primary btn-lg">Add movie</button>
+                    </div>
+                    {{ Form::close() }}
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
 @stop
 
 @section('search-section')
     <h2>Search</h2>
     <hr>
-    <form class="form-inline">
-        <input class="form-control" type="text" placeholder="Search by title">
-        <button class="btn btn-primary">Search</button>
+    <form class="form-inline" method="POST" action="/searchMovies">
+        <input class="form-control" type="text" placeholder="Search by title" name="title">
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
+
+@stop
+
+@section('search-result')
+    @if (Session::get('search_result'))
+        <ul class="list-group">
+            @foreach(Session::get('search_result') as $result)
+
+                <!--<form method="POST" action="/addMovie">
+                    <button type="submit" class="list-group-item"> -->
+                <a class="list-group-item" data-remote="false" data-toggle="modal" data-target="#modal-addmovie"
+                   data-movie-title="{{$result['title']}}" data-movie-overview="{{$result['overview']}}"
+                   data-movie-release-date="{{$result['release_date']}}" data-movie-poster-path="{{$result['poster_path']}}"
+                   data-movie-id="{{$result['id']}}">
+                    <h4 class="list-group-item-heading">{{$result['title']}}</h4>
+                    <p class="list-group-item-text">{{explode('-', $result['release_date'])[0]}}</p>
+                </a>
+                <!--
+                    </button>
+                </form> -->
+
+            @endforeach
+        </ul>
+    @endif
 @stop

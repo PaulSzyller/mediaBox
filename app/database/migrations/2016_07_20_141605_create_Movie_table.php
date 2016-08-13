@@ -16,6 +16,7 @@ class CreateMovieTable extends Migration {
 			$table->increments('id');
 			$table->string('genre', 255);
 			$table->string('homepage', 255)->nullable();
+            $table->string('tmdb_id', 255);
 			$table->string('imdb_id', 255);
 			$table->string('title', 255);
 			$table->text('overview')->nullable();
