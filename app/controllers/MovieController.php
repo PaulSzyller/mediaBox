@@ -15,42 +15,19 @@ class MovieController extends \BaseController {
         if(!(Auth::check()))
             return Redirect::to('/login');
 
-        return View::make('movies');
+        $user = Auth::user();
+        $movies = [];
+        $user_movies = UserToMovie::where('user_id', '=', $user->id)->get();
+        foreach ($user_movies as $movie) {
+            array_push($movies, Movie::where('id', '=', $movie->movie_id)->get()->first());
+        }
+
+
+        return View::make('movies', [
+            'user' => $user,
+            'movies' => $movies
+        ]);
     }
-
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
 
 	/**
 	 * Display the specified resource.
