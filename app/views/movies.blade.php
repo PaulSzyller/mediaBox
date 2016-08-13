@@ -88,7 +88,7 @@
 
     <!-- Modal Register -->
     <div class="modal fade modal-ext" id="modal-addmovie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <!--Content-->
             <div class="modal-content">
                 <!--Header-->
