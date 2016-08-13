@@ -25,3 +25,6 @@ After the first wave of initial setup steps, please follow those directions when
   -create a pull request on github  
 
   -either we decide on 1 person that approves every PR or we can review them together, and merge them to the master  
+
+
+
