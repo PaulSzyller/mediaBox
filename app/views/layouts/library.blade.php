@@ -21,7 +21,9 @@
                 <div class="card card-block">
                     @yield('search-section')
                 </div>
-                @yield('search-result')
+                 <div style="max-heigh: 500px; overflow: scroll">
+                    @yield('search-result')
+                 </div>
             </div>
 
         </div>
