@@ -12,7 +12,15 @@ class DashboardController extends \BaseController {
         if(!(Auth::check()))
             return Redirect::to('/login');
 
+        $user = Auth::user();
+        $user_movies = UserToMovie::where('user_id', '=', $user->id)->get();
+        $movie_count = 0;
+        foreach ($user_movies as $movie) {
+            $movie_count++;
+        }
 
-        return View::make('dashboard');
+        return View::make('dashboard',[
+            'movie_count' => $movie_count
+        ]);
     }
 }

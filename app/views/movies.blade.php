@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-xs-6">
             <h2>Movies Library</h2>
-            <div class="btn-group">
+           <!-- <div class="btn-group">
                 <button type="button" class="btn btn-primary">Filter</button>
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -23,7 +23,7 @@
                     <a class="dropdown-item" href="#">By Favorite</a>
                     <a class="dropdown-item" href="#">By Rating</a>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="col-xs-6 text-xs-right">
@@ -44,7 +44,7 @@
                         <th>Title</th>
                         <th>Genre</th>
                         <th>Release Date</th>
-                        <th>Rating</th>
+                        <th>User Rating</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -56,7 +56,16 @@
                             <td>{{ $movie->title }}</td>
                             <td>{{ $movie->genre }}</td>
                             <td>{{ $movie->release_date }}</td>
-                            <td>{{ $movie->user_rating }}</td>
+                            <td>
+                                @for($i = 0; $i < 5; $i++)
+                                    @if($i < $movie->user_rating)
+                                        <a><i onclick="changeStarColor()" class="fa fa-star text-primary"
+                                              aria-hidden="true"></i></a>
+                                    @else
+                                        <a><i onclick="changeStarColor()" class="fa fa-star-o" aria-hidden="true"></i></a>
+                                    @endif
+                                @endfor
+                            </td>
                         </tr>
                     @endforeach
 

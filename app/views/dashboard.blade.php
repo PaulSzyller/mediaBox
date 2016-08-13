@@ -14,13 +14,6 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="card card-block">
-                            <h4 class="card-title">Vinyl</h4>
-                            <p class="card-text"></p>
-                            <a href="{{ URL::to('vinyl') }}" class="card-link">View Library</a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="card card-block">
                             <h4 class="card-title">Movies</h4>
                             <p class="card-text"></p>
                             <a href="{{ URL::to('movie') }}" class="card-link">View Library</a>
@@ -28,16 +21,23 @@
                     </div>
                     <div class="col-xs-12">
                         <div class="card card-block">
+                            <h4 class="card-title">Vinyl</h4>
+                            <p class="card-text">Not Implemented</p>
+                            <!--<a href="{{ URL::to('vinyl') }}" class="card-link">View Library</a>-->
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="card card-block">
                             <h4 class="card-title">Video Games</h4>
-                            <p class="card-text"></p>
-                            <a href="#" class="card-link">View Library</a>
+                            <p class="card-text">Not Implemented</p>
+                            <!--<a href="#" class="card-link">View Library</a>-->
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="card card-block">
                             <h4 class="card-title">Books</h4>
-                            <p class="card-text"></p>
-                            <a href="#" class="card-link">View Library</a>
+                            <p class="card-text">Not Implemented</p>
+                            <!--<a href="#" class="card-link">View Library</a>-->
                         </div>
                     </div>
                 </div>

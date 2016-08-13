@@ -11,3 +11,12 @@ $("#modal-addmovie").on("show.bs.modal", function(e) {
     $(this).find("#add-movie-button").val((link.attr("data-movie-id")));
 });
 
+
+function changeStarColor() {
+
+    $('.fa-star-o').click( function() {
+
+        $(this).addClass('fa-star').removeClass('fa-star-o');
+    } );
+
+}

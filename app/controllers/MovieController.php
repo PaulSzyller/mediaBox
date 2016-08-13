@@ -18,14 +18,17 @@ class MovieController extends \BaseController {
         $user = Auth::user();
         $movies = [];
         $user_movies = UserToMovie::where('user_id', '=', $user->id)->get();
+        $movie_count = 0;
         foreach ($user_movies as $movie) {
             array_push($movies, Movie::where('id', '=', $movie->movie_id)->get()->first());
+            $movie_count++;
         }
 
 
         return View::make('movies', [
             'user' => $user,
-            'movies' => $movies
+            'movies' => $movies,
+            'movie_count' => $movie_count
         ]);
     }
 

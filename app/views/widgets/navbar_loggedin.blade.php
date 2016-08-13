@@ -15,9 +15,9 @@
             <dt class="col-sm-4">User</dt>
             <dd class="col-sm-8">{{Auth::user()->username}}</dd>
             <dt class="col-sm-4">Movies</dt>
-            <dd class="col-sm-8">300</dd>
+            <dd class="col-sm-8">{{ $movie_count }}</dd>
             <dt class="col-sm-4">Vinyl</dt>
-            <dd class="col-sm-8">50</dd>
+            <dd class="col-sm-8">Not Implemented</dd>
         </dl>
     </div>
     <!--/.About-->
@@ -37,10 +37,10 @@
         <li><a class="collapsible-header waves-effect">Libraries</a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="#" class="waves-effect">Books</a></li>
                     <li><a href="{{ URL::to('movie') }}" class="waves-effect">Movies</a></li>
-                    <li><a href="#" class="waves-effect">Video Games</a></li>
-                    <li><a href="{{ URL::to('vinyl') }}" class="waves-effect">Vinyl</a></li>
+                    <!--<li><a href="#" class="waves-effect">Books</a></li>-->
+                    <!--<li><a href="#" class="waves-effect">Video Games</a></li>-->
+                    <!--<li><a href="{{ URL::to('vinyl') }}" class="waves-effect">Vinyl</a></li>-->
                 </ul>
             </div>
         </li>
