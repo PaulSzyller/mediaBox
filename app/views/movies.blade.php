@@ -96,11 +96,15 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h3><i class="fa fa-user"></i> Movie Title </h3>
+                    <h3 id="modal-movie-title"><i class="fa fa-user"></i>MovieTitle</h3>
                 </div>
                 <!--Body-->
                 <div class="modal-body">
-                    No data found
+                    <ul class="list-group">
+                        <li class="list-group-item" id="modal-movie-overview" >Overview</li>
+                        <li class="list-group-item" id="modal-movie-release-date">ReleaseDate</li>
+                        <li class="list-group-item" id="modal-movie-poster-path">PosterPath</li>
+                    </ul>
                 </div>
                 <!--Footer-->
                 <div class="modal-footer">
@@ -129,7 +133,7 @@
 
                 <!--<form method="POST" action="/addMovie">
                     <button type="submit" class="list-group-item"> -->
-                <a data-remote="false" data-toggle="modal" data-target="#modal-addmovie" data-movie="{{$result['id']}}">
+                <a data-remote="false" data-toggle="modal" data-target="#modal-addmovie" data-movie="{{$result}}">
                     <h4 class="list-group-item-heading">{{$result['title']}}</h4>
                     <p class="list-group-item-text">{{explode('-', $result['release_date'])[0]}}
                     <br> {{ $result['id'] }}
