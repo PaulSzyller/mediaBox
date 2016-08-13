@@ -85,6 +85,31 @@
             </nav>
         </div>
     </div>
+
+    <!-- Modal Register -->
+    <div class="modal fade modal-ext" id="modal-addmovie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3><i class="fa fa-user"></i> Movie Title </h3>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    No data found
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
 @stop
 
 @section('search-section')
@@ -102,19 +127,18 @@
         <ul class="list-group">
             @foreach(Session::get('search_result') as $result)
 
-                <form method="POST" action="/addMovie">
-                    <button type="submit" class="list-group-item">
-                        <h4 class="list-group-item-heading">{{$result['title']}}</h4>
-                        <p class="list-group-item-text">{{explode('-', $result['release_date'])[0]}}
-                        <br> <img src="{{$result['poster_path']}}" />
-                        <br> {{ $result['id'] }}
-
-                        </p>
+                <!--<form method="POST" action="/addMovie">
+                    <button type="submit" class="list-group-item"> -->
+                <a data-remote="false" data-toggle="modal" data-target="#modal-addmovie" data-movie="{{$result['id']}}">
+                    <h4 class="list-group-item-heading">{{$result['title']}}</h4>
+                    <p class="list-group-item-text">{{explode('-', $result['release_date'])[0]}}
+                    <br> <img src="{{$result['poster_path']}}" />
+                    <br> {{ $result['id'] }}
+                    </p>
+                </a>
+                <!--
                     </button>
-
-
-
-                </form>
+                </form> -->
 
             @endforeach
         </ul>
