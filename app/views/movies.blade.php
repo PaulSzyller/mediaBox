@@ -48,13 +48,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td></td>
-                    </tr>
+
+                    <?php $i=1 ?>
+                    @foreach($movies as $movie)
+                        <tr>
+                            <th scope="row">{{$i++}}</th>
+                            <td>{{ $movie->title }}</td>
+                            <td>{{ $movie->genre }}</td>
+                            <td>{{ $movie->release_date }}</td>
+                            <td>{{ $movie->user_rating }}</td>
+                        </tr>
+                    @endforeach
+
+
+
                     </tbody>
                 </table>
             </div>
