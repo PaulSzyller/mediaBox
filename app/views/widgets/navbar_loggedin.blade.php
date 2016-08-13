@@ -13,7 +13,7 @@
     <div class="about">
         <dl class="dl-horizontal row">
             <dt class="col-sm-4">User</dt>
-            <dd class="col-sm-8">{{Auth::user()['username']}}</dd>
+            <dd class="col-sm-8">{{Auth::user()->username}}</dd>
             <dt class="col-sm-4">Movies</dt>
             <dd class="col-sm-8">300</dd>
             <dt class="col-sm-4">Vinyl</dt>
