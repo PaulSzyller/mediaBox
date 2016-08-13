@@ -12,7 +12,6 @@ class DashboardController extends \BaseController {
         if(!(Auth::check()))
             return Redirect::to('/login');
 
-
         return View::make('dashboard');
     }
 }

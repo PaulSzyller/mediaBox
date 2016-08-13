@@ -16,15 +16,16 @@ class ProfileController extends \BaseController {
     public function updateProfile() {
 
         $validation = Validator::make(Input::all(),[
-            'username' => 'required_without_all:fname,lname,email,password,confirm_password,gender,question,answer|unique:MediaBoxUser',
-            'fname' => 'required_without_all:username,lname,email,password,confirm_password,gender,question,answer',
-            'lname' => 'required_without_all:username,fname,email,password,confirm_password,gender,question,answer',
-            'email' => 'required_without_all:username,fname,lname,password,confirm_password,gender,question,answer|email|unique:MediaBoxUser',
-            'password' => 'required_without_all:username,fname,lname,email,confirm_password,gender,question,answer|required_with:confirm_password',
-            'confirm_password' => 'required_without_all:username,fname,lname,email,password,gender,question,answer|required_with:password|same:password',
-            'gender' => 'required_without_all:username,fname,lname,email,password,confirm_password,question,answer',
-            'question' => 'required_without_all:username,fname,lname,email,password,confirm_password,gender,answer',
-            'answer' => 'required_without_all:username,fname,lname,email,password,confirm_password,gender,question'
+            'username' => 'required_without_all:fname,lname,email,password,confirm_password,gender,question,answer,profile_pic|unique:MediaBoxUser',
+            'fname' => 'required_without_all:username,lname,email,password,confirm_password,gender,question,answer,profile_pic',
+            'lname' => 'required_without_all:username,fname,email,password,confirm_password,gender,question,answer,profile_pic',
+            'email' => 'required_without_all:username,fname,lname,password,confirm_password,gender,question,answer,profile_pic|email|unique:MediaBoxUser',
+            'password' => 'required_without_all:username,fname,lname,email,confirm_password,gender,question,answer,profile_pic|required_with:confirm_password',
+            'confirm_password' => 'required_without_all:username,fname,lname,email,password,gender,question,answer,profile_pic|required_with:password|same:password',
+            'gender' => 'required_without_all:username,fname,lname,email,password,confirm_password,question,answer,profile_pic',
+            'question' => 'required_without_all:username,fname,lname,email,password,confirm_password,gender,answer,profile_pic',
+            'answer' => 'required_without_all:username,fname,lname,email,password,confirm_password,gender,question,profile_pic',
+            'profile_pic' => 'required_without_all:username,fname,lname,email,password,confirm_password,gender,question,answer'
         ]);
 
         if ($validation->fails()) {
@@ -58,6 +59,9 @@ class ProfileController extends \BaseController {
         }
         if (!empty(Input::get('answer'))) {
             $user->answer = Input::get('answer');
+        }
+        if (!empty(Input::get('profile_pic'))) {
+            $user->profile_pic = Input::get('profile_pic');
         }
 
         $user->save();

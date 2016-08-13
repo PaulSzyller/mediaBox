@@ -134,6 +134,12 @@
                     </div>
 
                     <div class="md-form">
+                        <i class="fa fa-globe prefix"></i>
+                        <input type="text" name="profile_pic" class="form-control">
+                        <label for="profile_pic">Path to profile picture</label>
+                    </div>
+
+                    <div class="md-form">
                         <i class="fa fa-birthday-cake prefix"></i>
                         <input type="date" id="dob" name="dob" class="form-control datepicker">
                         <label for="dob">Date of Birth</label>

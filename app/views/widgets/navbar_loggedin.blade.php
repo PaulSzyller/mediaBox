@@ -4,7 +4,7 @@
     <!-- Logo -->
     <div class="logo-wrapper waves-light">
         <a href="#">
-            <img src="" class="img-circle">
+            <img src={{Auth::user()->profile_pic}} class="img-circle">
         </a>
     </div>
     <!--/. Logo -->
