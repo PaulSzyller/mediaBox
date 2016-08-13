@@ -104,7 +104,7 @@ class MovieController extends \BaseController {
         $user = Auth::user();
         $id = Input::get('id');
 
-        if (!($movie = Movie::where('tmdb_id', '=', $id)->exists())) {
+        if (!($movie = Movie::where('tmdb_id', '=', $id)->get()->first())) {
 
             $tmdb = Tmdb::getMoviesApi()->getMovie($id);
 
