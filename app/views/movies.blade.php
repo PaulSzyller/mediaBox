@@ -111,7 +111,7 @@
                             <p id="modal-movie-overview">Overview</p>
 
                             <h5>Release Date</h5>
-                            <p id="modal-movie-poster-path">ReleaseDate</p>
+                            <p id="modal-movie-release-date">ReleaseDate</p>
                         </div>
                     </div>
 
