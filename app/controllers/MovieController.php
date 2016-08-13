@@ -113,6 +113,8 @@ class MovieController extends \BaseController {
                     'title' => $tmdb['title'],
                     'genre' => $tmdb['genres'][0]['name'],
                     'homepage' => $tmdb['homepage'],
+                    'tmdb_id' => $tmdb['id'],
+                    'imdb_id' => $tmdb['imdb_id'],
                     'overview' => $tmdb['overview'],
                     'user_rating' => 0,
                     'poster_path' => $tmdb['poster_path'],
