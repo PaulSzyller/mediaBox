@@ -100,6 +100,14 @@
                 </div>
                 <!--Body-->
                 <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5>Overview</h5>
+                            <li class="list-group-item" id="modal-movie-overview" >Overview</li>
+                        </div>
+                    </div>
+
                     <ul class="list-group">
                         <li class="list-group-item" id="modal-movie-overview" >Overview</li>
                         <li class="list-group-item" id="modal-movie-release-date">ReleaseDate</li>
