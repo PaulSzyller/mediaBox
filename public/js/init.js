@@ -38,7 +38,7 @@ $(function () {
             highlight: "#A8B3C5",
             label: "Books"
         }
-    ]
+    ];
 
 
     // Makes chart responsive

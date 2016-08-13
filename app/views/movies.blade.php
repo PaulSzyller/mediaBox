@@ -101,7 +101,21 @@
     @if (Session::get('search_result'))
         <ul class="list-group">
             @foreach(Session::get('search_result') as $result)
-                <li class="list-group-item">{{$result['title']}}, {{explode('-', $result['release_date'])[0]}}</li>
+
+                <form method="POST" action="/addMovie">
+                    <button type="submit" class="list-group-item">
+                        <h4 class="list-group-item-heading">{{$result['title']}}</h4>
+                        <p class="list-group-item-text">{{explode('-', $result['release_date'])[0]}}
+                        <br> <img src="{{$result['poster_path']}}" />
+                        <br> {{ $result['id'] }}
+
+                        </p>
+                    </button>
+
+
+
+                </form>
+
             @endforeach
         </ul>
     @endif

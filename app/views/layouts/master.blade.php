@@ -42,6 +42,7 @@
     {{HTML::script('js/init.js')}}
 
     <!-- Custom JavaScript files go here -->
+    {{HTML::script('js/movies.js')}}
 
 </body>
 </html>
