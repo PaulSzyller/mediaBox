@@ -3,14 +3,21 @@
 class ProfileController extends \BaseController {
 
     public function showProfileView() {
-        if((Auth::check())) {
-            $user = Auth::user();
-            return View::make('profile', [
-                'user' => $user
-            ]);
+        if(!(Auth::check())) {
+            return Redirect::to('/login');
         }
 
-        return Redirect::to('/login');
+        $user = Auth::user();
+        $user_movies = UserToMovie::where('user_id', '=', $user->id)->get();
+        $movie_count = 0;
+        foreach ($user_movies as $movie) {
+            $movie_count++;
+        }
+
+        return View::make('profile', [
+            'user' => $user,
+            'movie_count' => $movie_count
+        ]);
     }
 
     public function updateProfile() {
