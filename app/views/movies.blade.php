@@ -102,17 +102,20 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-4">
+                            <h5>Poster</h5>
+                            <p id="modal-movie-poster-path">PosterPath</p>
+                        </div>
+
+                        <div class="col-xs-8">
                             <h5>Overview</h5>
-                            <li class="list-group-item" id="modal-movie-overview" >Overview</li>
+                            <p id="modal-movie-overview">Overview</p>
+
+                            <h5>Release Date</h5>
+                            <p id="modal-movie-poster-path">PosterPath</p>
                         </div>
                     </div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item" id="modal-movie-overview" >Overview</li>
-                        <li class="list-group-item" id="modal-movie-release-date">ReleaseDate</li>
-                        <li class="list-group-item" id="modal-movie-poster-path">PosterPath</li>
-                    </ul>
                 </div>
                 <!--Footer-->
                 <div class="modal-footer">
