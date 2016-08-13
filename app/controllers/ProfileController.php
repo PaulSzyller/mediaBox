@@ -20,7 +20,7 @@ class ProfileController extends \BaseController {
             'fname' => 'required_without_all:username,lname,email,password,confirm_password,gender,question,answer',
             'lname' => 'required_without_all:username,fname,email,password,confirm_password,gender,question,answer',
             'email' => 'required_without_all:username,fname,lname,password,confirm_password,gender,question,answer|email|unique:MediaBoxUser',
-            'password' => 'required_without_all:username,fname,lname,email,confirm_password,gender,question,answer',
+            'password' => 'required_without_all:username,fname,lname,email,confirm_password,gender,question,answer|required_with:confirm_password',
             'confirm_password' => 'required_without_all:username,fname,lname,email,password,gender,question,answer|required_with:password|same:password',
             'gender' => 'required_without_all:username,fname,lname,email,password,confirm_password,question,answer',
             'question' => 'required_without_all:username,fname,lname,email,password,confirm_password,gender,answer',
