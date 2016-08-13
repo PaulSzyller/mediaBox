@@ -111,7 +111,9 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="row">
-                                <p id="modal-movie-poster-path">PosterPath</p>
+                                <p>
+                                    <img src="#" id="modal-movie-poster-path" class="img-fluid">
+                                </p>
                             </div>
                         </div>
 
