@@ -93,50 +93,51 @@
                     {{ Form::open(array('action' => 'ProfileController@updateProfile', 'method' => 'POST')) }}
                     <div class="md-form">
                         <i class="fa fa-user prefix"></i>
-                        <input type="text" id="username" name="username" class="form-control">
-                        <label for="username">Your username</label>
+                        <input type="text" id="username" name="username" class="form-control" value="{{$user->username}}">
+                        <label class="active" for="username">Your username</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-user prefix"></i>
-                        <input type="text" id="fname" name="fname" class="form-control">
-                        <label for="fname">First name</label>
+                        <input type="text" id="fname" name="fname" class="form-control" value="{{$user->first_name}}">
+                        <label class="active" for="fname">First name</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-user prefix"></i>
-                        <input type="text" id="lname" name="lname" class="form-control">
-                        <label for="lname">Last name</label>
+                        <input type="text" id="lname" name="lname" class="form-control" value="{{$user->last_name}}">
+                        <label class="active" for="lname">Last name</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-envelope prefix"></i>
-                        <input type="email" id="email" name="email" class="form-control">
-                        <label for="email">Your email</label>
+                        <input type="email" id="email" name="email" class="form-control" value="{{$user->email}}">
+                        <label class="active" for="email">Your email</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
                         <input type="password" id="password" name="password" class="form-control">
-                        <label for="password">Your password</label>
+                        <label class="active" for="password">Your password</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
                         <input type="password" id="confirm_password" name="confirm_password" class="form-control">
-                        <label for="confirm_password">Repeat password</label>
+                        <label class="active" for="confirm_password">Repeat password</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-globe prefix"></i>
-                        <input type="text" id="location" name="location" class="form-control">
-                        <label for="location">Your location</label>
+                        <input type="text" id="location" name="location" class="form-control"
+                               value="{{$user->location}}">
+                        <label class="active" for="location">Your location</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-birthday-cake prefix"></i>
-                        <input type="date" id="dob" name="dob" class="form-control datepicker">
-                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" class="form-control datepicker" value="{{ $user->dob }}">
+                        <label class="active" for="dob">Date of Birth</label>
                     </div>
 
                     <div class="md-form m-b-2 p-b-3">
@@ -171,8 +172,8 @@
 
                     <div class="md-form">
                         <i class="fa fa-check prefix"></i>
-                        <input type="text" id="answer" name="answer" class="form-control">
-                        <label for="answer">Verification Answer</label>
+                        <input type="text" id="answer" name="answer" class="form-control" value="{{ $user->answer }}">
+                        <label class="active" for="answer">Verification Answer</label>
                     </div>
                     <div class="text-xs-center">
                         <button type="submit" class="btn btn-primary btn-lg">Update</button>
