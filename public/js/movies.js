@@ -15,7 +15,6 @@ $("#modal-addmovie").on("show.bs.modal", function(e) {
 function changeStarColor() {
 
     $('.fa-star-o').click( function() {
-
         $(this).addClass('fa-star').removeClass('fa-star-o');
     } );
 

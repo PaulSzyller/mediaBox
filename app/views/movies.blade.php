@@ -57,12 +57,13 @@
                             <td>{{ $movie->genre }}</td>
                             <td>{{ $movie->release_date }}</td>
                             <td>
-                                @for($i = 0; $i < 5; $i++)
-                                    @if($i < $movie->user_rating)
-                                        <a><i onclick="changeStarColor()" class="fa fa-star text-primary"
+                                @for($j = 0; $j < 5; $j++)
+                                    @if($j < $movie->user_rating)
+                                        <a><i onclick="changeStarColor()" class="fa fa-star red-text"
                                               aria-hidden="true"></i></a>
                                     @else
-                                        <a><i onclick="changeStarColor()" class="fa fa-star-o" aria-hidden="true"></i></a>
+                                        <a><i onclick="changeStarColor()" class="fa fa-star-o red-text"
+                                              aria-hidden="true"></i></a>
                                     @endif
                                 @endfor
                             </td>
