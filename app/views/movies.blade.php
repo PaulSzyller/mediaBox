@@ -103,7 +103,7 @@
 
                     <div class="row">
                         <div class="col-xs-4">
-                            <div clas="row">
+                            <div class="row">
                                 <p id="modal-movie-poster-path">PosterPath</p>
                             </div>
                         </div>
