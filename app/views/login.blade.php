@@ -134,7 +134,7 @@
                                 </fieldset>
 
                                 <fieldset class="form-group">
-                                    <input class="with-gap" name="gender" type="radio" id="female" value="male">
+                                    <input class="with-gap" name="gender" type="radio" id="female" value="female">
                                     <label for="female">Female</label>
                                 </fieldset>
 
