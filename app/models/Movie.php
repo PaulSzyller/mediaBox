@@ -12,7 +12,7 @@ class Movie extends Eloquent {
      * @var string
      */
     protected $table = 'Movie';
-    protected $fillable = ['genre', 'homepage', 'imdb_id', 'title', 'overview', 'user_rating', 'poster_path',
+    protected $fillable = ['genre', 'homepage', 'tmdb_id','imdb_id', 'title', 'overview', 'user_rating', 'poster_path',
         'release_date', 'status', 'tag_line'];
 
 }
